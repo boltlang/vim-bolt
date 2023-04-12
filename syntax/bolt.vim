@@ -6,6 +6,7 @@ endif
 syn keyword boltKeyword struct enum pub mut let for if else elif in match impl class type import as mod foreign handle effect
 syn keyword boltFunction return perform yield resume
 syn match boltOperator "[-+*/^&%$!?<>=|]\+"
+syn match boltOperator ":="
 syn region boltString start=/\v"/ end=/\v"/ contains=boltEscapeSequence
 syn region boltString start=/\v'/ end=/\v'/ contains=boltEscapeSequence
 syn match boltEscapeSequence "\\[abfnrtv0\\]"
