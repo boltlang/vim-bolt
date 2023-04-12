@@ -1,0 +1,2 @@
+# some test files that shouldn't be added to Git
+/*.bolt
