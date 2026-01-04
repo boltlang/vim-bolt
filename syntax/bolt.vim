@@ -3,7 +3,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn keyword boltKeyword struct enum pub mut let for if else elif in match impl class type import as mod foreign handle effect
+syn keyword boltKeyword struct enum pub mut let for if else elif in match trait impl type import as mod foreign handle effect fn
 syn keyword boltFunction return perform yield resume
 syn match boltOperator "[-+*/^&%$!?<>=|]\+"
 syn match boltOperator ":="
