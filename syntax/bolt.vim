@@ -10,6 +10,7 @@ syn match boltOperator ":="
 syn region boltString start=/\v"/ end=/\v"/ contains=boltEscapeSequence
 syn region boltString start=/\v'/ end=/\v'/ contains=boltEscapeSequence
 syn match boltEscapeSequence "\\[abfnrtv0\\]"
+syn region boltDecorator start='@' end=/\s/
 syn region boltComment start='#' end='\n'
 syn match boltInteger "[0-9]\+"
 syn match boltDelimiter "[\.\]\[)(}{,]"
@@ -22,4 +23,4 @@ highlight link boltDelimiter Delimiter
 highlight link boltFunction Function
 highlight link boltOperator Operator
 highlight link boltEscapeSequence Special
-
+highlight link boltDecorator Macro
