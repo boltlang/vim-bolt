@@ -13,9 +13,26 @@ Plug 'boltlang/vim-bolt'
 ```
 
 **packer.nvim**
-```
+```lua
 use 'boltlang/vim-bolt'
 ```
+
+**Lazy.nvim**
+```lua
+{
+  'boltlang/vim-bolt',
+  ft = { 'bolt' },
+}
+```
+
+## Configuration
+
+The plugin accepts optionally the following environment variables:
+
+| Name                | Description                                                  |
+|---------------------|--------------------------------------------------------------|
+| `VIM_BOLT_LSP_PATH` | Path to the Bolt language server binary                      |
+| `VIM_BOLT_TS_PATH`  | The location of a local copy of the Bolt tree-sitter grammar |
 
 ## Developing
 
