@@ -30,6 +30,17 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.lsp.config('boltls', {
   cmd = { lsp_binary_path },
-  filetypes = { 'bolt' },
+  filetypes = { 'bolt', 'toml' },
+  -- Bolt files, and of TOML files only `bolt.toml`, whose errors the server
+  -- reports in it. Not calling `on_dir` keeps the server away from a
+  -- buffer, like a `Cargo.toml`.
+  root_dir = function(bufnr, on_dir)
+    local name = vim.api.nvim_buf_get_name(bufnr)
+    if vim.bo[bufnr].filetype == 'toml' and vim.fs.basename(name) ~= 'bolt.toml' then
+      return
+    end
+    -- The package's directory, or the file's own for a loose file.
+    on_dir(vim.fs.root(bufnr, { 'bolt.toml' }) or vim.fs.dirname(name))
+  end,
 })
 
